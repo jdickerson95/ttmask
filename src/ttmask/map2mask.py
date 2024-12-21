@@ -13,6 +13,8 @@ def mask_from_map(
     padding_width: int,
     soft_edge_width: int
 ) -> np.ndarray:
+    # Create a copy of the input data to make it writable
+    map_data = map_data.copy()
 
     above_threshold = map_data >= binarization_threshold
     below_threshold = map_data < binarization_threshold
